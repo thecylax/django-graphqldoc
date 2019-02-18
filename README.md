@@ -17,7 +17,7 @@ GraphQLDoc is a simple Django app to document GraphQL schemas.
             'TITLE': 'My GraphQL documentation',
         }
         
-   This step is optional, it changes the default logo and title on template.
+   This step is optional, it changes the logo and the default title in the template.
 
 3. Include the graphqldoc URLconf in your project `urls.py` like this:
 
