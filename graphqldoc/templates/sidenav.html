@@ -1,0 +1,18 @@
+{% block sidenav %}
+
+<ul>
+  <li class="logo">
+    <div class="user-view">
+      <div class="background">
+        <img src="{{ gdoc_logo }}" alt="">
+      </div>
+  </li>
+  <li><div class="divider"></div></li>
+  {% for field in sidemenu %}
+  <li>
+    <a class="waves-effect" href="{%url 'graphqldoc:detail' field %}">{{ field }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
