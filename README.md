@@ -10,11 +10,14 @@ GraphQLDoc is a simple Django app to document GraphQL schemas.
             'graphqldoc',
         ]
 
-2. Add GRAPHQLDOC config settings in your settings file, and configure the host of your graphql server, like this:
+2. Add GRAPHQLDOC config settings in your settings file, and configure according to your needs, like this:
 
         GRAPHQLDOC = {
-            'GRAPHQL_HOST': 'http://localhost:8000/graphql/',
+            'LOGO_URL': 'https://graphql.org/img/logo.svg',
+            'TITLE': 'My GraphQL documentation',
         }
+        
+   This step is optional, it changes the default logo and title on template.
 
 3. Include the graphqldoc URLconf in your project `urls.py` like this:
 
