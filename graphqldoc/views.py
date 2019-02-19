@@ -36,7 +36,7 @@ def index(request):
     context.update({
         'schema': result_schema['__schema'],
         'detail': result_schema['__schema']['queryType'],
-        'sidemenu': data,
+        'sidemenu': sorted(data),
         'menu': data,
     })
 
@@ -47,7 +47,7 @@ def detail(request, name):
         sidemenu = data[name.upper()]
         context.update({
             'schema': result_schema['__schema'],
-            'sidemenu': sidemenu,
+            'sidemenu': sorted(sidemenu),
             'menu': data,
         })
         return render(request, 'index.html', context)
@@ -74,7 +74,7 @@ def detail(request, name):
     context.update({
         'schema': result_schema['__schema'],
         'detail': detail,
-        'sidemenu': sidemenu,
+        'sidemenu': sorted(sidemenu),
         'menu': data,
     })
     return render(request, 'index.html', context)
