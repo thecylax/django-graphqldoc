@@ -30,22 +30,6 @@ for i in types:
     else:
         data[kind] = [name]
 
-for i in query_type['fields']:
-    kind = 'QUERY'
-    name = i['name']
-    if data.get(kind):
-        data[kind].append(name)
-    else:
-        data[kind] = [name]
-
-for i in mutation_type['fields']:
-    kind = 'MUTATION'
-    name = i['name']
-    if data.get(kind):
-        data[kind].append(name)
-    else:
-        data[kind] = [name]
-
 context = {'gdoc_logo': graphqldoc_logo, 'gdoc_title': graphqldoc_title}
 
 def index(request):
@@ -70,7 +54,10 @@ def detail(request, name):
         query = gql(get_query(name=name, _type='type'))
         result = client.execute(query)
         detail = result['__type']
-        sidemenu = data[result['__type']['kind']]
+        try:
+            sidemenu = data[result['__type']['kind']]
+        except TypeError:
+            sidemenu = data['OBJECT']
         # caso seja um objeto
         query_fields = result_schema['__schema']['queryType']['fields']
         mutation_fields = result_schema['__schema']['mutationType']['fields']
