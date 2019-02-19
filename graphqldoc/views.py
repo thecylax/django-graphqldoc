@@ -35,6 +35,7 @@ context = {'gdoc_logo': graphqldoc_logo, 'gdoc_title': graphqldoc_title}
 def index(request):
     context.update({
         'schema': result_schema['__schema'],
+        'detail': result_schema['__schema']['queryType'],
         'sidemenu': data,
         'menu': data,
     })
