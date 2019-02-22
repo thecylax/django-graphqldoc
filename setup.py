@@ -9,14 +9,14 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-graphqldoc',
-    version='0.1.0',
+    version='0.1.1',
     packages=find_packages(),
     include_package_data=True,
     license='BSD License',
-    description='GraphQLDoc is a simple Django app to document GraphQL schemas.',
+    description='GraphQLdoc is a simple Django app to document GraphQL schemas.',
     long_description=README,
     long_description_content_type="text/markdown",
-    url='https://www.example.com/',
+    url='https://github.com/thecylax/django-graphqldoc',
     author='Robson Cardoso dos Santos',
     author_email='cardoso.rcs@gmail.com',
     install_requires=[

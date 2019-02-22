@@ -1,6 +1,6 @@
-# GraphQLDoc
+# GraphQLdoc
 
-GraphQLDoc is a simple Django app to document GraphQL schemas.
+GraphQLdoc is a simple Django app to document GraphQL schemas.
 
 ## Quick start
 1. Add **graphqldoc** to your INSTALLED_APPS setting like this:
@@ -23,6 +23,4 @@ GraphQLDoc is a simple Django app to document GraphQL schemas.
 
         path('docs/', include('graphqldoc.urls')),
 
-4. Run `python manage.py migrate` to create the graphqldoc models.
-
-5. Start the development server and visit http://localhost:8000/docs/ to view the rendered documentation for your GraphQL server.
+4. Start the development server and visit http://localhost:8000/docs/ to view the rendered documentation for your GraphQL server.
